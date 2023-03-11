@@ -2,8 +2,8 @@
 <template>
   <div>
     <VueSlickCarousel :arrows="true" :dots="false">
-      <img v-for="(item, index) in photo">
-      "https://source.unsplash.com/"{{ photo.id }}
+      <!-- <img v-for="(item, index) in photo">
+      "https://source.unsplash.com/"{{ photo.id }} -->
 
       <img src="https://source.unsplash.com/random/" alt="2">
       <img src="https://source.unsplash.com/random/" alt="3">
@@ -19,7 +19,7 @@ import { createApi } from 'unsplash-js';
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
-const unsplash = createApi({ accessKey: 'N9S1GGf41Brm-VGvExB46hqwv2QbGnC82NUVKVVFQng' });
+const unsplash = createApi({ accessKey: process.env.api_key });
 
 unsplash.photos.getRandom({
   count: 5,

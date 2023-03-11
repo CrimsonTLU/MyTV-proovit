@@ -2,6 +2,10 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
+  env: {
+    api_key: process.env.US_ACCESS_KEY
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'mytv-proov',
