@@ -2,7 +2,9 @@
 <template>
   <div>
     <VueSlickCarousel :arrows="true" :dots="false">
-      <img src="https://source.unsplash.com/random/" alt="1">
+      <img v-for="(item, index) in photo">
+      "https://source.unsplash.com/"{{ photo.id }}
+
       <img src="https://source.unsplash.com/random/" alt="2">
       <img src="https://source.unsplash.com/random/" alt="3">
       <img src="https://source.unsplash.com/random/" alt="4">
@@ -19,18 +21,19 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
 const unsplash = createApi({ accessKey: 'N9S1GGf41Brm-VGvExB46hqwv2QbGnC82NUVKVVFQng' });
 
-// non-feed example
-
 unsplash.photos.getRandom({
   count: 5,
 }).then(result => {
   if (result.errors) {
-    // handle error here
+
     console.log('error occurred: ', result.errors[0]);
   } else {
-    // handle success here
+
     const photo = result.response;
-    console.log(photo);
+    console.log(photo[0].id);
+    return {
+      photo: photo
+    }
   }
 });
 
