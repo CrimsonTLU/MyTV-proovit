@@ -15,6 +15,7 @@
     "tw-elements": "^1.0.0-beta1",
     "unsplash-js": "^7.0.15",
     "vue": "^2.7.10",
+    "vue-fullscreen": "^2.6.1",
     "vue-server-renderer": "^2.7.10",
     "vue-slick-carousel": "^1.0.6",
     "vue-template-compiler": "^2.7.10"
